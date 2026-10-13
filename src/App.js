@@ -2,18 +2,19 @@ import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import CounterPage from "./pages/CounterPage/CounterPage";
+import { Routes, Route } from "react-router-dom";
+
 
 // TODO: Add Routes for Home and CounterPage
 function App() {
   return (
     <div>
       <Navbar />
-      <Routes>
-        <Route>
-            
-        </Route>
-      </Routes>
       {/* Add <Routes> and <Route> components here */}
+      <Routes>
+        <Route path="/home" element={<Home />}/>
+        <Route path="/counter" element={<CounterPage />}/>
+      </Routes>
     </div>
   );
 }

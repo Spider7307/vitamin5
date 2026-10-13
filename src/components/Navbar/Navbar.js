@@ -1,4 +1,7 @@
-import React from "react";
+import React,{useContext} from "react";
+import { Link } from "react-router-dom";
+import { ThemeContext } from "../../context/ThemeContext";
+import "./Navbar.css";
 
 // TODO: Add navigation links to Home and CounterPage
 // TODO: Add a theme toggle button
@@ -6,7 +9,15 @@ import React from "react";
 // TODO: Apply class "navbar-light" or "navbar-dark" using ternary operator based on theme
 // TODO: Create Navbar.css with styles for navbar-light and navbar-dark
 function Navbar() {
-  return <nav></nav>;
+    const {theme,toggleTheme} = useContext(ThemeContext);
+  return (
+  <nav className={theme === "dark" ? "navbar navbar-dark" : "navbar navbar-light"}>
+    <Link to="/home" className="nav-link">Home</Link>
+    {" | "}
+    <Link to="/counter" className="nav-link">Counter</Link>
+    <button onClick={toggleTheme}>Switch to {theme==="light" ? "Dark":"Light"} Mode</button>
+  </nav>
+  );
 }
 
-export default Navbar;
+export default Navbar
