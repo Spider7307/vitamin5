@@ -15,6 +15,7 @@ function Navbar() {
     <Link to="/home" className="nav-link">Home</Link>
     {" | "}
     <Link to="/counter" className="nav-link">Counter</Link>
+    {" | "}
     <button onClick={toggleTheme}>Switch to {theme==="light" ? "Dark":"Light"} Mode</button>
   </nav>
   );
